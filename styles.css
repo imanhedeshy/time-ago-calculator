@@ -27,7 +27,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   position: relative;
   text-align: center;
 }
@@ -36,10 +36,11 @@ body {
   color: #ccc;
   margin: 0;
   margin-bottom: 1rem;
+  margin-right: 5rem;
 }
 .time-ago__header__menu-btn {
   position: absolute;
-  top: 3.4rem;
+  top: 0;
   right: 1.5rem;
   font-size: 2.4rem;
   background-color: transparent;
@@ -53,7 +54,7 @@ body {
   align-items: center;
   flex-direction: column;
   position: absolute;
-  top: 5.4rem;
+  top: 3rem;
   right: 1.5rem;
   background-color: #f0f0f0;
   border: 1px solid #ccc;
@@ -66,7 +67,7 @@ body {
   padding: 0;
 }
 .time-ago__header__nav-item {
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   color: #ccc;
   padding: 1rem 2rem;
   cursor: pointer;
@@ -88,7 +89,6 @@ body {
   flex-direction: column;
   margin-bottom: 1rem;
 }
-
 .time-ago__main__subtitle {
   font-size: 2.4rem;
   margin-bottom: 1rem;
@@ -149,6 +149,6 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   color: #ccc;
 }/*# sourceMappingURL=styles.css.map */

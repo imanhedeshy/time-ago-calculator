@@ -4,14 +4,14 @@ $time-ago-border-color: #ccc;
 $time-ago-button-color: #6c757d;
 $time-ago-button-hover-color: #495057;
 $time-ago-title-font-size: 2.4rem; // 38.4px
-$time-ago-description-font-size: 1.8rem; // 28.8px
+$time-ago-description-font-size: 1.3rem; // 20.8px
 $time-ago-input-font-size: 1.6rem; // 25.6px
 $time-ago-button-font-size: 1.8rem; // 28.8px
 $time-ago-result-font-size: 2rem; // 32px
 
 // Mixins
 @mixin container {
-  max-width: 120rem; 
+  max-width: 120rem;
   min-width: 20rem;
   margin: 0 auto;
 }
@@ -63,7 +63,7 @@ body {
   background-color: $time-ago-background-color;
   padding: 1rem;
   @include flex-center;
-  flex-direction: column;
+  flex-direction: row;
   position: relative;
   text-align: center;
 
@@ -72,11 +72,12 @@ body {
     color: $time-ago-border-color;
     margin: 0;
     margin-bottom: 1rem;
+    margin-right: 5rem;
   }
 
   &__menu-btn {
     position: absolute;
-    top: $time-ago-title-font-size + 1rem; // 38.4px + 1rem = 48.4px
+    top: 0; // 38.4px + 1rem = 48.4px
     right: 1.5rem;
     font-size: 2.4rem; // 38.4px
     background-color: transparent;
@@ -89,7 +90,7 @@ body {
     @include flex-center;
     flex-direction: column;
     position: absolute;
-    top: $time-ago-title-font-size + 3rem; // 38.4px + 3rem = 74.4px
+    top: 3rem; // 38.4px + 3rem = 74.4px
     right: 1.5rem;
     background-color: $time-ago-background-color;
     border: 1px solid $time-ago-border-color;
@@ -124,11 +125,11 @@ body {
   @include flex-center;
   flex-direction: column;
   margin-bottom: 1rem;
-}
 
-.time-ago__main__subtitle {
-  font-size: $time-ago-title-font-size; // 38.4px
-  margin-bottom: 1rem;
+  &__subtitle {
+    font-size: $time-ago-title-font-size; // 38.4px
+    margin-bottom: 1rem;
+  }
 }
 
 .time-ago__form {
