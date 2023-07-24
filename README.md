@@ -1,6 +1,6 @@
 # Time Ago App
 
-![Time Ago App](./screenshot.png)
+![Time Ago App](./assets/screenshot.png)
 
 ## Description
 
@@ -29,7 +29,7 @@ The app accepts various date formats, including human-readable dates like "July 
 
 ## Preview
 
-![Preview](./preview.png)
+![Preview](./assets/preview.png)
 
 ## Installation
 
