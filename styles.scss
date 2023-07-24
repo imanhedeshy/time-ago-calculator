@@ -1,0 +1,194 @@
+// Variables
+$time-ago-background-color: #f0f0f0;
+$time-ago-border-color: #ccc;
+$time-ago-button-color: #6c757d;
+$time-ago-button-hover-color: #495057;
+$time-ago-title-font-size: 2.4rem; // 38.4px
+$time-ago-description-font-size: 1.8rem; // 28.8px
+$time-ago-input-font-size: 1.6rem; // 25.6px
+$time-ago-button-font-size: 1.8rem; // 28.8px
+$time-ago-result-font-size: 2rem; // 32px
+
+// Mixins
+@mixin container {
+  max-width: 120rem; 
+  min-width: 20rem;
+  margin: 0 auto;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Custom Function for lighten
+@function lighten-color($color, $amount) {
+  $r: red($color);
+  $g: green($color);
+  $b: blue($color);
+
+  // Calculate the new RGB values after lightening
+  $r: min(255, round($r - ($r * $amount / 100)));
+  $g: min(255, round($g - ($g * $amount / 100)));
+  $b: min(255, round($b - ($b * $amount / 100)));
+
+  // Return the new color
+  @return rgb($r, $g, $b);
+}
+
+// Styling
+html {
+  font-size: 100%; // 1rem = 16px
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: $time-ago-background-color;
+}
+
+.time-ago {
+  background-color: $time-ago-background-color;
+  padding: 2rem;
+  @include container;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.time-ago__header {
+  background-color: $time-ago-background-color;
+  padding: 1rem;
+  @include flex-center;
+  flex-direction: column;
+  position: relative;
+  text-align: center;
+
+  &__title {
+    font-size: $time-ago-title-font-size; // 38.4px
+    color: $time-ago-border-color;
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+
+  &__menu-btn {
+    position: absolute;
+    top: $time-ago-title-font-size + 1rem; // 38.4px + 1rem = 48.4px
+    right: 1.5rem;
+    font-size: 2.4rem; // 38.4px
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__nav {
+    display: none;
+    @include flex-center;
+    flex-direction: column;
+    position: absolute;
+    top: $time-ago-title-font-size + 3rem; // 38.4px + 3rem = 74.4px
+    right: 1.5rem;
+    background-color: $time-ago-background-color;
+    border: 1px solid $time-ago-border-color;
+    border-radius: 0.4rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    &-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    &-item {
+      font-size: $time-ago-description-font-size; // 28.8px
+      color: $time-ago-border-color;
+      padding: 1rem 2rem;
+      cursor: pointer;
+      @include flex-center;
+
+      &:hover {
+        background-color: lighten-color($time-ago-background-color, 10%);
+      }
+    }
+  }
+
+  &:hover .time-ago__header__nav {
+    display: flex;
+  }
+}
+
+.time-ago__main {
+  @include flex-center;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.time-ago__main__subtitle {
+  font-size: $time-ago-title-font-size; // 38.4px
+  margin-bottom: 1rem;
+}
+
+.time-ago__form {
+  @include flex-center;
+  flex-direction: column;
+  margin-top: 2rem;
+  width: 80%; // Increase the width by 50%
+
+  &__input {
+    padding: 1.6rem;
+    font-size: $time-ago-input-font-size; // 25.6px
+    width: 100%;
+    max-width: 30rem;
+    margin-bottom: 1rem;
+    border: 1px solid $time-ago-border-color;
+    border-radius: 0.4rem;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: darken($time-ago-border-color, 20%);
+    }
+  }
+
+  &__submit-btn {
+    font-size: $time-ago-button-font-size; // 28.8px
+    padding: 1.6rem 2.4rem;
+    color: white;
+    background-color: $time-ago-button-color;
+    border: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover,
+    &:focus {
+      background-color: $time-ago-button-hover-color;
+    }
+  }
+}
+
+.time-ago__result {
+  font-size: $time-ago-result-font-size; // 32px
+  margin-top: 2rem;
+  transition: color 0.3s ease;
+
+  &.invalid {
+    color: red;
+  }
+
+  &.valid {
+    color: green;
+  }
+}
+
+.time-ago__footer {
+  background-color: $time-ago-background-color;
+  padding: 1rem;
+  @include flex-center;
+  width: 100%;
+  font-size: $time-ago-description-font-size; // 28.8px
+  color: $time-ago-border-color;
+}

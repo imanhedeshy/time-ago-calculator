@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Time Ago Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="time-ago">
+      <header class="time-ago__header">
+        <h1 class="time-ago__header__title">Time Ago Calculator</h1>
+        <button class="time-ago__header__menu-btn">&#9776;</button>
+        <nav class="time-ago__header__nav">
+          <ul class="time-ago__header__nav-list">
+            <li class="time-ago__header__nav-item">Home</li>
+            <li class="time-ago__header__nav-item">Sign In/Up</li>
+            <li class="time-ago__header__nav-item">Contact</li>
+            <li class="time-ago__header__nav-item">About</li>
+            <li class="time-ago__header__nav-item">Downloads</li>
+          </ul>
+        </nav>
+      </header>
+      <main class="time-ago__main">
+        <p class="time-ago__main__subtitle">Calculate Time Ago</p>
+        <form id="time-ago-form" class="time-ago__form">
+          <input
+            type="text"
+            class="time-ago__form__input"
+            placeholder="Enter a date or timestamp"
+          />
+          <button type="submit" class="time-ago__form__submit-btn">
+            Calculate
+          </button>
+        </form>
+        <p class="time-ago__result" id="time-ago-result"></p>
+      </main>
+      <footer class="time-ago__footer">&copy; 2023 by Iman</footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
