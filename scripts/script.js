@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
         date = new Date(timestamp);
       }
     }
+    
 
     resultElement.textContent = isNaN(date.getTime())
       ? "Invalid date or timestamp"
